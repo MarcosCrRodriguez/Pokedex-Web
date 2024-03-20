@@ -1,0 +1,6 @@
+C:\Users\rodri\OneDrive\Documentos\C# Archivos\Pokedex-ASP\Dominio\bin\Debug\Dominio.dll
+C:\Users\rodri\OneDrive\Documentos\C# Archivos\Pokedex-ASP\Dominio\bin\Debug\Dominio.pdb
+C:\Users\rodri\OneDrive\Documentos\C# Archivos\Pokedex-ASP\Dominio\obj\Debug\Dominio.csproj.AssemblyReference.cache
+C:\Users\rodri\OneDrive\Documentos\C# Archivos\Pokedex-ASP\Dominio\obj\Debug\Dominio.csproj.CoreCompileInputs.cache
+C:\Users\rodri\OneDrive\Documentos\C# Archivos\Pokedex-ASP\Dominio\obj\Debug\Dominio.dll
+C:\Users\rodri\OneDrive\Documentos\C# Archivos\Pokedex-ASP\Dominio\obj\Debug\Dominio.pdb

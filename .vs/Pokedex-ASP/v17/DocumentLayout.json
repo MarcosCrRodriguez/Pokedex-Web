@@ -1,0 +1,181 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\rodri\\OneDrive\\Documentos\\C# Archivos\\Pokedex-ASP\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FF3773CA-AB21-4992-9F6E-C6BF2BBBD3F3}|Pokedex-ASP\\Pokedex-ASP.csproj|C:\\Users\\rodri\\OneDrive\\Documentos\\C# Archivos\\Pokedex-ASP\\pokedex-asp\\detallepokemon.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF3773CA-AB21-4992-9F6E-C6BF2BBBD3F3}|Pokedex-ASP\\Pokedex-ASP.csproj|solutionrelative:pokedex-asp\\detallepokemon.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF3773CA-AB21-4992-9F6E-C6BF2BBBD3F3}|Pokedex-ASP\\Pokedex-ASP.csproj|C:\\Users\\rodri\\OneDrive\\Documentos\\C# Archivos\\Pokedex-ASP\\pokedex-asp\\detallepokemon.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{FF3773CA-AB21-4992-9F6E-C6BF2BBBD3F3}|Pokedex-ASP\\Pokedex-ASP.csproj|solutionrelative:pokedex-asp\\detallepokemon.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF3773CA-AB21-4992-9F6E-C6BF2BBBD3F3}|Pokedex-ASP\\Pokedex-ASP.csproj|C:\\Users\\rodri\\OneDrive\\Documentos\\C# Archivos\\Pokedex-ASP\\pokedex-asp\\home.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{FF3773CA-AB21-4992-9F6E-C6BF2BBBD3F3}|Pokedex-ASP\\Pokedex-ASP.csproj|solutionrelative:pokedex-asp\\home.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF3773CA-AB21-4992-9F6E-C6BF2BBBD3F3}|Pokedex-ASP\\Pokedex-ASP.csproj|C:\\Users\\rodri\\OneDrive\\Documentos\\C# Archivos\\Pokedex-ASP\\pokedex-asp\\listapokemons.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF3773CA-AB21-4992-9F6E-C6BF2BBBD3F3}|Pokedex-ASP\\Pokedex-ASP.csproj|solutionrelative:pokedex-asp\\listapokemons.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF3773CA-AB21-4992-9F6E-C6BF2BBBD3F3}|Pokedex-ASP\\Pokedex-ASP.csproj|C:\\Users\\rodri\\OneDrive\\Documentos\\C# Archivos\\Pokedex-ASP\\pokedex-asp\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{FF3773CA-AB21-4992-9F6E-C6BF2BBBD3F3}|Pokedex-ASP\\Pokedex-ASP.csproj|solutionrelative:pokedex-asp\\default.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF3773CA-AB21-4992-9F6E-C6BF2BBBD3F3}|Pokedex-ASP\\Pokedex-ASP.csproj|C:\\Users\\rodri\\OneDrive\\Documentos\\C# Archivos\\Pokedex-ASP\\pokedex-asp\\listapokemons.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{FF3773CA-AB21-4992-9F6E-C6BF2BBBD3F3}|Pokedex-ASP\\Pokedex-ASP.csproj|solutionrelative:pokedex-asp\\listapokemons.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF3773CA-AB21-4992-9F6E-C6BF2BBBD3F3}|Pokedex-ASP\\Pokedex-ASP.csproj|C:\\Users\\rodri\\OneDrive\\Documentos\\C# Archivos\\Pokedex-ASP\\pokedex-asp\\formpokemon.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF3773CA-AB21-4992-9F6E-C6BF2BBBD3F3}|Pokedex-ASP\\Pokedex-ASP.csproj|solutionrelative:pokedex-asp\\formpokemon.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF3773CA-AB21-4992-9F6E-C6BF2BBBD3F3}|Pokedex-ASP\\Pokedex-ASP.csproj|C:\\Users\\rodri\\OneDrive\\Documentos\\C# Archivos\\Pokedex-ASP\\pokedex-asp\\formpokemon.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{FF3773CA-AB21-4992-9F6E-C6BF2BBBD3F3}|Pokedex-ASP\\Pokedex-ASP.csproj|solutionrelative:pokedex-asp\\formpokemon.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FF3773CA-AB21-4992-9F6E-C6BF2BBBD3F3}|Pokedex-ASP\\Pokedex-ASP.csproj|C:\\Users\\rodri\\OneDrive\\Documentos\\C# Archivos\\Pokedex-ASP\\pokedex-asp\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FF3773CA-AB21-4992-9F6E-C6BF2BBBD3F3}|Pokedex-ASP\\Pokedex-ASP.csproj|solutionrelative:pokedex-asp\\default.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 1,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedHeight": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DetallePokemon.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Documentos\\C# Archivos\\Pokedex-ASP\\Pokedex-ASP\\DetallePokemon.aspx.cs",
+              "RelativeDocumentMoniker": "Pokedex-ASP\\DetallePokemon.aspx.cs",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Documentos\\C# Archivos\\Pokedex-ASP\\Pokedex-ASP\\DetallePokemon.aspx.cs",
+              "RelativeToolTip": "Pokedex-ASP\\DetallePokemon.aspx.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAQwB8AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-20T05:56:22.294Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DetallePokemon.aspx",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Documentos\\C# Archivos\\Pokedex-ASP\\Pokedex-ASP\\DetallePokemon.aspx",
+              "RelativeDocumentMoniker": "Pokedex-ASP\\DetallePokemon.aspx",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Documentos\\C# Archivos\\Pokedex-ASP\\Pokedex-ASP\\DetallePokemon.aspx",
+              "RelativeToolTip": "Pokedex-ASP\\DetallePokemon.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-03-17T04:47:21.265Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ListaPokemons.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Documentos\\C# Archivos\\Pokedex-ASP\\Pokedex-ASP\\ListaPokemons.aspx.cs",
+              "RelativeDocumentMoniker": "Pokedex-ASP\\ListaPokemons.aspx.cs",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Documentos\\C# Archivos\\Pokedex-ASP\\Pokedex-ASP\\ListaPokemons.aspx.cs",
+              "RelativeToolTip": "Pokedex-ASP\\ListaPokemons.aspx.cs",
+              "ViewState": "AQIAAAUAAAAAAAAAAAD4vzsAAAANAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-16T23:24:12.997Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Default.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Documentos\\C# Archivos\\Pokedex-ASP\\Pokedex-ASP\\Default.aspx.cs",
+              "RelativeDocumentMoniker": "Pokedex-ASP\\Default.aspx.cs",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Documentos\\C# Archivos\\Pokedex-ASP\\Pokedex-ASP\\Default.aspx.cs",
+              "RelativeToolTip": "Pokedex-ASP\\Default.aspx.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACQAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-17T04:38:04.029Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Default.aspx",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Documentos\\C# Archivos\\Pokedex-ASP\\Pokedex-ASP\\Default.aspx",
+              "RelativeDocumentMoniker": "Pokedex-ASP\\Default.aspx",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Documentos\\C# Archivos\\Pokedex-ASP\\Pokedex-ASP\\Default.aspx",
+              "RelativeToolTip": "Pokedex-ASP\\Default.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-03-16T03:32:08.323Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "FormPokemon.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Documentos\\C# Archivos\\Pokedex-ASP\\Pokedex-ASP\\FormPokemon.aspx.cs",
+              "RelativeDocumentMoniker": "Pokedex-ASP\\FormPokemon.aspx.cs",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Documentos\\C# Archivos\\Pokedex-ASP\\Pokedex-ASP\\FormPokemon.aspx.cs",
+              "RelativeToolTip": "Pokedex-ASP\\FormPokemon.aspx.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAgwFIAAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-17T06:43:53.904Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "FormPokemon.aspx",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Documentos\\C# Archivos\\Pokedex-ASP\\Pokedex-ASP\\FormPokemon.aspx",
+              "RelativeDocumentMoniker": "Pokedex-ASP\\FormPokemon.aspx",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Documentos\\C# Archivos\\Pokedex-ASP\\Pokedex-ASP\\FormPokemon.aspx",
+              "RelativeToolTip": "Pokedex-ASP\\FormPokemon.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-03-17T06:39:47.702Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Home.aspx",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Documentos\\C# Archivos\\Pokedex-ASP\\Pokedex-ASP\\Home.aspx",
+              "RelativeDocumentMoniker": "Pokedex-ASP\\Home.aspx",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Documentos\\C# Archivos\\Pokedex-ASP\\Pokedex-ASP\\Home.aspx",
+              "RelativeToolTip": "Pokedex-ASP\\Home.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-03-18T20:37:11.33Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ListaPokemons.aspx",
+              "DocumentMoniker": "C:\\Users\\rodri\\OneDrive\\Documentos\\C# Archivos\\Pokedex-ASP\\Pokedex-ASP\\ListaPokemons.aspx",
+              "RelativeDocumentMoniker": "Pokedex-ASP\\ListaPokemons.aspx",
+              "ToolTip": "C:\\Users\\rodri\\OneDrive\\Documentos\\C# Archivos\\Pokedex-ASP\\Pokedex-ASP\\ListaPokemons.aspx",
+              "RelativeToolTip": "Pokedex-ASP\\ListaPokemons.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-03-16T03:32:59.953Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

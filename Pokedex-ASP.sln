@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34622.214
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pokedex-ASP", "Pokedex-ASP\Pokedex-ASP.csproj", "{FF3773CA-AB21-4992-9F6E-C6BF2BBBD3F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dominio", "Dominio\Dominio.csproj", "{8DB94A19-0AF9-4272-86ED-A0AEC5CAF48E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClasesDatos", "ClasesDatos\ClasesDatos.csproj", "{F5DC9B69-E98B-48FF-B96F-B52DBC44F621}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcepcionesPropias", "ExcepcionesPropias\ExcepcionesPropias.csproj", "{596F789A-5D6A-4866-A963-02E326FB2BF8}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FF3773CA-AB21-4992-9F6E-C6BF2BBBD3F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FF3773CA-AB21-4992-9F6E-C6BF2BBBD3F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FF3773CA-AB21-4992-9F6E-C6BF2BBBD3F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FF3773CA-AB21-4992-9F6E-C6BF2BBBD3F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DB94A19-0AF9-4272-86ED-A0AEC5CAF48E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DB94A19-0AF9-4272-86ED-A0AEC5CAF48E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DB94A19-0AF9-4272-86ED-A0AEC5CAF48E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DB94A19-0AF9-4272-86ED-A0AEC5CAF48E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5DC9B69-E98B-48FF-B96F-B52DBC44F621}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5DC9B69-E98B-48FF-B96F-B52DBC44F621}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5DC9B69-E98B-48FF-B96F-B52DBC44F621}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5DC9B69-E98B-48FF-B96F-B52DBC44F621}.Release|Any CPU.Build.0 = Release|Any CPU
+		{596F789A-5D6A-4866-A963-02E326FB2BF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{596F789A-5D6A-4866-A963-02E326FB2BF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{596F789A-5D6A-4866-A963-02E326FB2BF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{596F789A-5D6A-4866-A963-02E326FB2BF8}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D4EE99DD-6FBC-40ED-95D3-85F1E4FB746C}
+	EndGlobalSection
+EndGlobal

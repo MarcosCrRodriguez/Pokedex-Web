@@ -1,0 +1,11 @@
+C:\Users\rodri\OneDrive\Documentos\C# Archivos\Pokedex-ASP\ClasesDatos\bin\Debug\ClasesDatos.dll
+C:\Users\rodri\OneDrive\Documentos\C# Archivos\Pokedex-ASP\ClasesDatos\bin\Debug\ClasesDatos.pdb
+C:\Users\rodri\OneDrive\Documentos\C# Archivos\Pokedex-ASP\ClasesDatos\bin\Debug\Dominio.dll
+C:\Users\rodri\OneDrive\Documentos\C# Archivos\Pokedex-ASP\ClasesDatos\bin\Debug\Dominio.pdb
+C:\Users\rodri\OneDrive\Documentos\C# Archivos\Pokedex-ASP\ClasesDatos\obj\Debug\ClasesDatos.csproj.AssemblyReference.cache
+C:\Users\rodri\OneDrive\Documentos\C# Archivos\Pokedex-ASP\ClasesDatos\obj\Debug\ClasesDatos.csproj.CoreCompileInputs.cache
+C:\Users\rodri\OneDrive\Documentos\C# Archivos\Pokedex-ASP\ClasesDatos\obj\Debug\ClasesDa.54CF174E.Up2Date
+C:\Users\rodri\OneDrive\Documentos\C# Archivos\Pokedex-ASP\ClasesDatos\obj\Debug\ClasesDatos.dll
+C:\Users\rodri\OneDrive\Documentos\C# Archivos\Pokedex-ASP\ClasesDatos\obj\Debug\ClasesDatos.pdb
+C:\Users\rodri\OneDrive\Documentos\C# Archivos\Pokedex-ASP\ClasesDatos\bin\Debug\ExcepcionesPropias.dll
+C:\Users\rodri\OneDrive\Documentos\C# Archivos\Pokedex-ASP\ClasesDatos\bin\Debug\ExcepcionesPropias.pdb

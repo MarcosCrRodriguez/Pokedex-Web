@@ -1,0 +1,6 @@
+C:\Users\rodri\OneDrive\Documentos\C# Archivos\Pokedex-ASP\ExcepcionesPropias\bin\Debug\ExcepcionesPropias.dll
+C:\Users\rodri\OneDrive\Documentos\C# Archivos\Pokedex-ASP\ExcepcionesPropias\bin\Debug\ExcepcionesPropias.pdb
+C:\Users\rodri\OneDrive\Documentos\C# Archivos\Pokedex-ASP\ExcepcionesPropias\obj\Debug\ExcepcionesPropias.csproj.AssemblyReference.cache
+C:\Users\rodri\OneDrive\Documentos\C# Archivos\Pokedex-ASP\ExcepcionesPropias\obj\Debug\ExcepcionesPropias.csproj.CoreCompileInputs.cache
+C:\Users\rodri\OneDrive\Documentos\C# Archivos\Pokedex-ASP\ExcepcionesPropias\obj\Debug\ExcepcionesPropias.dll
+C:\Users\rodri\OneDrive\Documentos\C# Archivos\Pokedex-ASP\ExcepcionesPropias\obj\Debug\ExcepcionesPropias.pdb
