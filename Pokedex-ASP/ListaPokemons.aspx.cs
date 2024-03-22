@@ -17,6 +17,12 @@ namespace Pokedex_ASP
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!(Seguridad.EsAdmin(Session["usuario"]) == "Admin"))
+            {
+                Session.Add("Error", "Se requieren permisos de Admin para acceder a esta pantalla");
+                Response.Redirect("Error.aspx");
+            }
+
             FiltroAvanzado = chkAvanzado.Checked;
             if (!IsPostBack)
             {

@@ -34,11 +34,31 @@
                         <li class="nav-item">
                             <a class="nav-link" runat="server" href="~/Contacto.aspx">Contacto</a>
                         </li>
+                        <li class="nav-item">
+                            <a class="nav-link" runat="server" href="~/MiPerfil.aspx">Mi Perfil</a>
+                        </li>
                     </ul>
-                    <%--<div class="d-flex" role="search">
-                <asp:TextBox runat="server" CssClass="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                <asp:Button CssClass="btn btn-outline-success" ID="btnSerch" runat="server" type="submit" OnClick="btnSerch_Click" Text="Search" />
-            </div>--%>
+                    <% if (!(Session["usuario"] != null))
+                        { %>
+                    <div class="d-flex" role="search">
+                        <div class="nav-item me-2">
+                            <asp:Button ID="btnLogin" runat="server" CssClass="btn btn-success" Text="Login" type="submit" OnClick="btnLogin_Click" />
+                        </div>
+                        <div class="nav-item me-2">
+                            <asp:Button ID="btnRegistrar" runat="server" CssClass="btn btn-outline-primary" Text="Registrar" type="submit" OnClick="btnRegistrar_Click" />
+                        </div>
+                        <div class="nav-item me-2">
+                        </div>
+                    </div>
+                    <% }
+                        else
+                        { %>
+                    <div class="d-flex" role="search">
+                        <div class="nav-item me-2">
+                            <asp:Button ID="btnCerrarSesion" runat="server" CssClass="btn btn-outline-secondary" Text="Cerrar Sesion" type="submit" OnClick="btnCerrarSesion_Click" />
+                        </div>
+                    </div>
+                    <% }%>
                 </div>
             </div>
         </nav>

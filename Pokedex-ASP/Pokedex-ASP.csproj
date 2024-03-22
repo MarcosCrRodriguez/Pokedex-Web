@@ -71,9 +71,13 @@
     <Content Include="Content\style-lbl-error.css" />
     <Content Include="Default.aspx" />
     <Content Include="DetallePokemon.aspx" />
+    <Content Include="Error.aspx" />
     <Content Include="FormPokemon.aspx" />
     <Content Include="Home.aspx" />
     <Content Include="ListaPokemons.aspx" />
+    <Content Include="Login.aspx" />
+    <Content Include="MiPerfil.aspx" />
+    <Content Include="Registro.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -98,6 +102,13 @@
     <Compile Include="DetallePokemon.aspx.designer.cs">
       <DependentUpon>DetallePokemon.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Error.aspx.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Error.aspx.designer.cs">
+      <DependentUpon>Error.aspx</DependentUpon>
+    </Compile>
     <Compile Include="FormPokemon.aspx.cs">
       <DependentUpon>FormPokemon.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -119,6 +130,13 @@
     <Compile Include="ListaPokemons.aspx.designer.cs">
       <DependentUpon>ListaPokemons.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
     <Compile Include="MasterSite.Master.cs">
       <DependentUpon>MasterSite.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -126,7 +144,21 @@
     <Compile Include="MasterSite.Master.designer.cs">
       <DependentUpon>MasterSite.Master</DependentUpon>
     </Compile>
+    <Compile Include="MiPerfil.aspx.cs">
+      <DependentUpon>MiPerfil.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="MiPerfil.aspx.designer.cs">
+      <DependentUpon>MiPerfil.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Registro.aspx.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registro.aspx.designer.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterSite.Master" />
