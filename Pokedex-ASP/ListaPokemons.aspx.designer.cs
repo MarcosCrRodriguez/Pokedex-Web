@@ -60,6 +60,15 @@ namespace Pokedex_ASP
         protected global::System.Web.UI.WebControls.DropDownList ddlDebilidad;
 
         /// <summary>
+        /// txtMensaje control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label txtMensaje;
+
+        /// <summary>
         /// btnBuscar control.
         /// </summary>
         /// <remarks>
@@ -76,5 +85,32 @@ namespace Pokedex_ASP
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView dgvPokemons;
+
+        /// <summary>
+        /// lblSeAgregoCorrect control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSeAgregoCorrect;
+
+        /// <summary>
+        /// lblSeModificoCorrect control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSeModificoCorrect;
+
+        /// <summary>
+        /// lblSeEliminoCorrect control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSeEliminoCorrect;
     }
 }

@@ -5,6 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <style>
         .lbl-error {
+            font-weight: bold;
             background-color: #FFCCCC; /* Fondo rojo suave */
             border: 2px solid #8B0000; /* Borde rojo oscuro de 2px */
             padding: 5px; /* Añadir un espacio alrededor del contenido del label */

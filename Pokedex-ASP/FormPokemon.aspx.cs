@@ -88,8 +88,8 @@ namespace Pokedex_ASP
         {
             try
             {
-                if (txtNumeroPokedex.Text == "" || txtNombre.Text == "" || txtDescripcion.Text == "" || txtUrlImagen.Text == "" ||
-                    ddlTipo.Items.Count == 0 || ddlResistencia.Items.Count == 0 || ddlDebilidad.Items.Count == 0) 
+                if (Validacion.ValidaTextoVacio(txtNumeroPokedex.Text) || Validacion.ValidaTextoVacio(txtNombre.Text) || Validacion.ValidaTextoVacio(txtDescripcion.Text) ||
+                    Validacion.ValidaTextoVacio(txtUrlImagen.Text) || ddlTipo.Items.Count == 0 || ddlResistencia.Items.Count == 0 || ddlDebilidad.Items.Count == 0) 
                 {
                     lblMensaje.Visible = true;
                     throw new EmptyParametersException("¡Alguno de los campos esta vacio, debe ingesar datos en todos los campos!");
@@ -99,15 +99,13 @@ namespace Pokedex_ASP
                     lblMensaje.Visible = false;
                 }
 
-                //Agregar a la DB
                 Pokemon pokemon = new Pokemon(Convert.ToInt32(txtNumeroPokedex.Text), txtNombre.Text, txtDescripcion.Text, txtUrlImagen.Text, ddlTipo.SelectedValue, ddlResistencia.SelectedValue, ddlDebilidad.SelectedValue, 0); 
                 if (!(Pokemon.VerificarExistePokemon(PokemonDAO.LeerPokemones(), pokemon.NumeroPokedex)))
                 {
                     if (PokemonDAO.AgregarPokemon(pokemon))
                     {
-                        // me tira una excepcion pero sigue camino como si no hubiese pasado nada..
-                        // sera porque estoy cortando el try sin haberlo terminado y x eso la tira??
-                        Response.Redirect("ListaPokemons.aspx");
+                        Session.Add("Complete", "Se agrego al pokemon correctamente en la pokedex");
+                        Response.Redirect("ListaPokemons.aspx?id=" + 1);
                     }
                 }
                 else
@@ -118,15 +116,26 @@ namespace Pokedex_ASP
             }
             catch (EmptyParametersException ex)
             {
-                lblMensaje.Text = "¡Alguno de los campos esta vacio, debe ingesar datos en todos los campos!";
+                lblMensaje.Text = ex.Message;
+            }
+            catch (SqlExceptionDuplicateUserDB ex)
+            {
+                lblMensaje.Visible = true;
+                lblMensaje.Text = ex.Message;
             }
             catch (ExistingDataOnDB ex)
             {
-                lblMensaje.Text = "¡No se pudo cargar el Pokemon con un Numero de Pokedex ya existente!";
+                lblMensaje.Text = ex.Message;
+            }
+            catch (DataBasesException ex)
+            {
+                lblMensaje.Visible = true;
+                lblMensaje.Text = ex.Message;
             }
             catch (Exception ex)
             {
-                lblMensaje.Text = ex.ToString();
+                lblMensaje.Visible = true;
+                lblMensaje.Text = ex.Message;
             }
         }
 
@@ -134,8 +143,8 @@ namespace Pokedex_ASP
         {
             try
             {
-                if (txtNumeroPokedex.Text == "" || txtNombre.Text == "" || txtDescripcion.Text == "" || txtUrlImagen.Text == "" ||
-                    ddlTipo.Items.Count == 0 || ddlResistencia.Items.Count == 0 || ddlDebilidad.Items.Count == 0)
+                if (Validacion.ValidaTextoVacio(txtNumeroPokedex.Text) || Validacion.ValidaTextoVacio(txtNombre.Text) || Validacion.ValidaTextoVacio(txtDescripcion.Text) ||
+                    Validacion.ValidaTextoVacio(txtUrlImagen.Text) || ddlTipo.Items.Count == 0 || ddlResistencia.Items.Count == 0 || ddlDebilidad.Items.Count == 0)
                 {
                     lblMensaje.Visible = true;
                     throw new EmptyParametersException("¡Alguno de los campos esta vacio, debe ingesar datos en todos los campos!");
@@ -148,7 +157,8 @@ namespace Pokedex_ASP
                 Pokemon pokemon = new Pokemon(Convert.ToInt32(txtNumeroPokedex.Text), txtNombre.Text, txtDescripcion.Text, txtUrlImagen.Text, ddlTipo.SelectedValue, ddlResistencia.SelectedValue, ddlDebilidad.SelectedValue, idPokemon);
                 if (PokemonDAO.ModificarPokemon(pokemon))
                 {
-                    Response.Redirect("ListaPokemons.aspx");
+                    Session.Add("Complete", "Se modifico correctamente al pokemon");
+                    Response.Redirect("ListaPokemons.aspx?id=" + 2);
                 }
                 else
                 {
@@ -157,15 +167,15 @@ namespace Pokedex_ASP
             }
             catch (EmptyParametersException ex)
             {
-                lblMensaje.Text = "¡Alguno de los campos esta vacio, debe ingesar datos en todos los campos!";
+                lblMensaje.Text = ex.Message;
             }
             catch (DataBasesException ex)
             {
-                lblMensaje.Text = "¡Error a la hora de trabajar con la DB!";
+                lblMensaje.Text = ex.Message;
             }
             catch (Exception ex)
             {
-                lblMensaje.Text = ex.ToString();
+                lblMensaje.Text = ex.Message;
             }
         }
 
@@ -200,7 +210,7 @@ namespace Pokedex_ASP
             try
             {
                 //ingresar nuevamente para confirmar la baja del pokemon
-                if (txtNumeroPokedex.Text == "" || txtNombre.Text == "")
+                if (Validacion.ValidaTextoVacio(txtNumeroPokedex.Text) || Validacion.ValidaTextoVacio(txtNombre.Text))
                 {
                     lblMensaje.Visible = true;
                     throw new EmptyParametersException("¡Alguno de los campos esta vacio, debe ingesar datos en todos los campos!");
@@ -214,7 +224,8 @@ namespace Pokedex_ASP
                 {
                     if (PokemonDAO.Eliminar(idPokemon, Convert.ToInt32(txtNumeroPokedex.Text), txtNombre.Text))
                     {
-                        Response.Redirect("ListaPokemons.aspx");
+                        Session.Add("Complete", "Se dio de baja correctamente al pokemon");
+                        Response.Redirect("ListaPokemons.aspx?id=" + 0);
                     }
                 }
                 else
@@ -225,19 +236,19 @@ namespace Pokedex_ASP
             }
             catch (EmptyParametersException ex)
             {
-                lblMensaje.Text = "¡Alguno de los campos esta vacio, debe ingesar datos en todos los campos!";
+                lblMensaje.Text = ex.Message;
             }
             catch (DataBasesException ex)
             {
-                lblMensaje.Text = "¡Error a la hora de trabajar con la DB!";
+                lblMensaje.Text = ex.Message;
             }
             catch (ExistingDataOnDB ex)
             {
-                lblMensaje.Text = "¡No se pudo cargar el Pokemon con un Numero de Pokedex ya existente!";
+                lblMensaje.Text = ex.Message;
             }
             catch (Exception ex)
             {
-                lblMensaje.Text = ex.ToString();
+                lblMensaje.Text = ex.Message;
             }
         }
 

@@ -24,4 +24,25 @@
             </div>
         </div>
     </div>
+    <% if (DebeLogearse == 0)
+        { %>
+    <div class="row">
+        <div class="col-5">
+            <div class="mb-3">
+                <a href="Login.aspx">Login</a>
+            </div>
+        </div>
+    </div>
+    <% }
+        else if (DebeLogearse == -1)
+        { %>
+    <div class="row">
+        <div class="col-5">
+            <div class="mb-3">
+                <asp:Label  runat="server" Text="Ingresa en el siguiente enlace para volver a la pokedex:"></asp:Label> <br />
+                <a href="Default.aspx">Volver a la Pokedex</a>
+            </div>
+        </div>
+    </div>
+    <% }%>
 </asp:Content>

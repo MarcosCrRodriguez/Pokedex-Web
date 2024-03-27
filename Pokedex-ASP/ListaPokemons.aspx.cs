@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using ClasesDatos;
 using Dominio;
+using ExcepcionesPropias;
 
 namespace Pokedex_ASP
 {
@@ -17,19 +18,67 @@ namespace Pokedex_ASP
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!(Seguridad.EsAdmin(Session["usuario"]) == "Admin"))
-            {
-                Session.Add("Error", "Se requieren permisos de Admin para acceder a esta pantalla");
-                Response.Redirect("Error.aspx");
-            }
+            txtMensaje.Visible = false;
+            lblSeAgregoCorrect.Visible = false;
+            lblSeModificoCorrect.Visible = false;
+            lblSeEliminoCorrect.Visible = false;
 
-            FiltroAvanzado = chkAvanzado.Checked;
-            if (!IsPostBack)
+            try
             {
+                if (!(Seguridad.EsAdmin(Session["usuario"]) == "Admin"))
+                {
+                    Session.Add("Error", "Se requieren permisos de Admin para acceder a esta pantalla");
+                    Response.Redirect("Error.aspx", false);
+                }
+
+                FiltroAvanzado = chkAvanzado.Checked;
+
                 pokemons = PokemonDAO.LeerPokemones();
                 ListaPokemons.OrdenarPorValor(pokemons);
                 dgvPokemons.DataSource = pokemons;
                 dgvPokemons.DataBind();
+            }
+            catch (DataBasesException ex)
+            {
+                Session.Add("Error", ex.Message);
+                Response.Redirect("Error.aspx");
+            }
+            catch (Exception ex)
+            {
+                Session.Add("Error", ex.Message);
+                Response.Redirect("Error.aspx");
+            }
+
+            if (Request.QueryString["id"] != null)
+            {
+                int id = int.Parse(Request.QueryString["id"].ToString());
+
+                switch (id)
+                {
+                    case 1:
+                        lblSeAgregoCorrect.Text = Session["Complete"].ToString();
+                        lblSeAgregoCorrect.Visible = true;
+                        break;
+                    case 2:
+                        lblSeModificoCorrect.Text = Session["Complete"].ToString();
+                        lblSeModificoCorrect.Visible = true;
+                        break;
+                    case 0:
+                        lblSeEliminoCorrect.Text = Session["Complete"].ToString();
+                        lblSeEliminoCorrect.Visible = true;
+                        break;
+                    default:
+                        lblSeAgregoCorrect.Visible = false;
+                        lblSeModificoCorrect.Visible = false;
+                        lblSeEliminoCorrect.Visible = false;
+                        break;
+                }
+            }
+            else
+            {
+                lblSeAgregoCorrect.Visible = false;
+                lblSeModificoCorrect.Visible = false;
+                lblSeEliminoCorrect.Visible = false;
             }
         }
 
@@ -64,10 +113,23 @@ namespace Pokedex_ASP
 
             if (FiltroAvanzado == false)
             {
-                pokemons = PokemonDAO.LeerPokemones();
-                ListaPokemons.OrdenarPorValor(pokemons);
-                dgvPokemons.DataSource = pokemons;
-                dgvPokemons.DataBind();
+                try
+                {
+                    pokemons = PokemonDAO.LeerPokemones();
+                    ListaPokemons.OrdenarPorValor(pokemons);
+                    dgvPokemons.DataSource = pokemons;
+                    dgvPokemons.DataBind();
+                }
+                catch (DataBasesException ex)
+                {
+                    Session.Add("Error", ex.Message);
+                    Response.Redirect("Error.aspx");
+                }
+                catch (Exception ex)
+                {
+                    Session.Add("Error", ex.Message);
+                    Response.Redirect("Error.aspx");
+                }
             }
         }
 
@@ -79,10 +141,26 @@ namespace Pokedex_ASP
                 ListaPokemons.OrdenarPorValor(listaFiltrada);
                 dgvPokemons.DataSource = listaFiltrada;
                 dgvPokemons.DataBind();
+
+                if (listaFiltrada.Count == 0)
+                {
+                    throw new NotDataFound("¡No hay ningun pokémon con los filtros ingresados, intenta de ingresar otros filtros!");
+                }
+            }
+            catch (NotDataFound ex)
+            {
+                txtMensaje.Visible = true;
+                txtMensaje.Text = ex.Message;
+            }
+            catch (DataBasesException ex)
+            {
+                txtMensaje.Visible = true;
+                txtMensaje.Text = ex.Message;
             }
             catch (Exception)
             {
-                throw;
+                txtMensaje.Visible = true;
+                txtMensaje.Text = "¡Hubo un error al al filtrar el pokemon, intenta filtrar nuevamente los datos del mismo!";
             }
         }
 

@@ -44,10 +44,10 @@ namespace ClasesDatos
                 int rows = command.ExecuteNonQuery();
                 rtn = true;
             }
-            //catch (SqlException ex)
-            //{
-            //    throw new SqlExceptionDuplicateUserDB("No se pudo cargar el Pokemon con un Numero de Pokedex ya existente", ex);
-            //}
+            catch (SqlException ex)
+            {
+                throw new SqlExceptionDuplicateUserDB("No se pudo cargar el Pokemon con un Numero de Pokedex ya existente", ex);
+            }
             catch (Exception ex)
             {
                 throw new DataBasesException("Error a la hora de trabajar con la DB", ex);
@@ -86,13 +86,46 @@ namespace ClasesDatos
                 }
                 return pokemon;
             }
-            //catch (exception ex)
-            //{
-            //    throw new databasesexception("error a la hora de trabajar con la db", ex);
-            //}
             catch (Exception ex)
             {
-                throw ex;
+                throw new DataBasesException("Hubo problemas con la carga de la lista desde la BD", ex);
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public static Pokemon LeerPorNumeroPokedex(int numeroPokedex)
+        {
+            Pokemon pokemon = null;
+            try
+            {
+                command.Parameters.Clear();
+                connection.Open();
+                command.CommandText = $"SELECT * FROM POKEMONS WHERE NumeroPokedex = @NumeroPokedex";
+                command.Parameters.AddWithValue("@NumeroPokedex", numeroPokedex);
+
+                using (SqlDataReader reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        pokemon = new Pokemon(Convert.ToInt32(reader["NumeroPokedex"]),
+                            reader["Nombre"].ToString(),
+                            reader["Descripcion"].ToString(),
+                            reader["UrlImagen"].ToString(),
+                            reader["Tipo"].ToString(),
+                            reader["Resistencia"].ToString(),
+                            reader["Debilidad"].ToString(),
+                            Convert.ToInt32(reader["ID"])
+                            );
+                    }
+                }
+                return pokemon;
+            }
+            catch (Exception ex)
+            {
+                throw new DataBasesException("Hubo problemas con la carga de la lista desde la BD", ex);
             }
             finally
             {
@@ -128,13 +161,9 @@ namespace ClasesDatos
                 }
                 return listaPokemones;
             }
-            //catch (Exception ex)
-            //{
-            //    throw new DataBasesException("Hubo problemas con la carga de la \nlista desde la BD", ex); 
-            //}
             catch (Exception ex)
             {
-                throw ex;
+                throw new DataBasesException("Hubo problemas con la carga de la lista desde la BD", ex);
             }
             finally
             {
@@ -168,13 +197,9 @@ namespace ClasesDatos
                 }
                 return listaPokemones;
             }
-            //catch (Exception ex)
-            //{
-            //    throw new DataBasesException("Hubo problemas con la carga de la \nlista desde la BD", ex); 
-            //}
             catch (Exception ex)
             {
-                throw ex;
+                throw new DataBasesException("Hubo un problema al cargar la \nlista desde la BD", ex);
             }
             finally
             {

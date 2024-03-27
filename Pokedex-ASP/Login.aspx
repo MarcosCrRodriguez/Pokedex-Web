@@ -12,6 +12,7 @@
             border: 2px solid #8B0000; /* Borde rojo oscuro de 2px */
             border-radius: 3px; /* Borde redondeado en relación con el ancho de la ventana */
             display: inline-block;
+            margin: 5px;
         }
     </style>
 
@@ -21,15 +22,15 @@
     <div class="row">
         <div class="col-5">
             <div class="mb-3">
-                <asp:Label ID="lblUser" runat="server" Text="User"></asp:Label>
-                <asp:TextBox ID="txtUser" runat="server" CssClass="form-control"></asp:TextBox>
+                <asp:Label ID="lblUser" runat="server" Text="User" CssClass="form-label"></asp:Label>
+                <asp:TextBox ID="txtUser" runat="server" CssClass="form-control" type="email"></asp:TextBox>
             </div>
         </div>
     </div>
     <div class="row">
         <div class="col-5">
             <div class="mb-3">
-                <asp:Label ID="lblPassword" runat="server" Text="Password"></asp:Label>
+                <asp:Label ID="lblPassword" runat="server" Text="Password" CssClass="form-label"></asp:Label>
                 <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" type="password"></asp:TextBox>
             </div>
         </div>

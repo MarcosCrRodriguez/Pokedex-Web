@@ -9,9 +9,19 @@
             font-weight: bold;
             padding: 2px 4px; /* Espacio alrededor del texto en relación con el ancho de la ventana */
             border: 0.1vw solid black; /* Ancho del borde en relación con el ancho de la ventana */
+            background-color: #E0FFFF;
             border-radius: 3px; /* Borde redondeado en relación con el ancho de la ventana */
             display: inline-block;
-            background-color: #E0FFFF;
+        }
+
+        .lbl-text-error {
+            font-size: 16px;
+            font-weight: bold;
+            padding: 2px 4px; /* Espacio alrededor del texto en relación con el ancho de la ventana */
+            background-color: #FFCCCC; /* Fondo rojo suave */
+            border: 2px solid #8B0000; /* Borde rojo oscuro de 2px */
+            border-radius: 3px; /* Borde redondeado en relación con el ancho de la ventana */
+            display: inline-block;
         }
     </style>
 
@@ -28,27 +38,27 @@
         <div class="col"></div>
     </div>
     <br />
-    <div class="row">
-        <div class="col-6">
+    <div class="row bg-dark" style="padding-top: 10px; padding-left: 20px; margin-left: -30px; margin-right: -30px;">
+        <div class="col-5">
             <div class="mb-3">
-                <asp:Label ID="lblFiltrar" runat="server" Text="Filtrar"></asp:Label>
+                <asp:Label ID="lblFiltrar" runat="server" Text="Filtrar" Style="color: white;"></asp:Label>
                 <asp:TextBox runat="server" ID="txtFiltro" CssClass="form-control" AutoPostBack="true" OnTextChanged="txtFiltro_TextChanged" />
             </div>
         </div>
-        <div class="col-6" style="display: flex; flex-direction: column; justify-content: flex-end;">
+        <div class="col-2"></div>
+        <div class="col-5" style="display: flex; flex-direction: column; justify-content: flex-end;">
             <div class="mb-3">
-                <asp:CheckBox Text="Filtro Avanzado" runat="server" CssClass=""
-                    ID="chkAvanzado" AutoPostBack="true" OnCheckedChanged="chkAvanzado_CheckedChanged" />
+                <asp:CheckBox Text="Filtro Avanzado" runat="server"
+                    ID="chkAvanzado" AutoPostBack="true" OnCheckedChanged="chkAvanzado_CheckedChanged" Style="color: white;" />
             </div>
         </div>
     </div>
     <% if (FiltroAvanzado)
         { %>
-    <hr />
-    <div class="row">
+    <div class="row bg-secondary" style="padding-top: 25px; padding-left: 20px; margin-left: -25px; margin-right: -30px;">
         <div class="col-3">
             <div class="mb-3">
-                <asp:Label runat="server" Text="Tipo"></asp:Label>
+                <asp:Label runat="server" Text="Tipo" Style="color: white;"></asp:Label>
                 <asp:DropDownList runat="server" ID="ddlTipo" CssClass="form-control"
                     OnSelectedIndexChanged="ddlTipo_SelectedIndexChanged" AutoPostBack="true">
                     <asp:ListItem Text="Fuego" />
@@ -74,7 +84,7 @@
         </div>
         <div class="col-3">
             <div class="mb-3">
-                <asp:Label runat="server" Text="Debilidad"></asp:Label>
+                <asp:Label runat="server" Text="Debilidad" Style="color: white;"></asp:Label>
                 <asp:DropDownList runat="server" ID="ddlDebilidad" CssClass="form-control"
                     OnSelectedIndexChanged="ddlDebilidad_SelectedIndexChanged" AutoPostBack="true">
                     <asp:ListItem Text="Fuego" />
@@ -98,15 +108,16 @@
                 </asp:DropDownList>
             </div>
         </div>
-        <%--<div class="col-3">
-            <div class="mb-3">
-                <asp:Label runat="server" Text="Filtro"></asp:Label>
-                <asp:TextBox runat="server" ID="txtFiltradoAvanzado" CssClass="form-control" />
-            </div>
-        </div>--%>
         <div class="col-6"></div>
     </div>
-    <div class="row">
+    <div class="row bg-secondary" style="padding-top: 10px; padding-left: 20px; margin-left: -25px; margin-right: -30px;">
+        <div class="col-3">
+            <div class="mb-3">
+                <asp:Label runat="server" Text="" ID="txtMensaje" CssClass="lbl-text-error"></asp:Label>
+            </div>
+        </div>
+    </div>
+    <div class="row bg-secondary" style="padding-top: 10px; padding-left: 20px; margin-left: -25px; margin-right: -30px;">
         <div class="col-3">
             <div class="mb-3">
                 <asp:Button ID="btnBuscar" runat="server" Text="Buscar" OnClick="btnBuscar_Click" CssClass="btn btn-primary" />
@@ -116,7 +127,7 @@
     <% }%>
     <br />
     <asp:GridView ID="dgvPokemons" runat="server" DataKeyNames="ID" OnSelectedIndexChanged="dgvPokemons_SelectedIndexChanged"
-        OnPageIndexChanging="dgvPokemons_PageIndexChanging" AllowPaging="true" PageSize="12" CssClass="table table-dark table-bordered"
+        OnPageIndexChanging="dgvPokemons_PageIndexChanging" AllowPaging="true" PageSize="15" CssClass="table table-dark table-bordered"
         AutoGenerateColumns="false">
         <Columns>
             <%--<asp:BoundField HeaderText="ID" DataField="ID" HeaderStyle-CssClass="oculto" ItemStyle-CssClass="oculto" />--%>
@@ -129,6 +140,21 @@
         </Columns>
     </asp:GridView>
     <%-- Aca solo debería de poder agregar pokemons --%>
-    <a href="FormPokemon.aspx" class="btn btn-primary">Agregar</a>
+    <div class="row">
+        <div class="col-3">
+            <div class="mb-3">
+                <asp:Label runat="server" Text="" ID="lblSeAgregoCorrect" CssClass="lbl-text-border"></asp:Label>
+                <asp:Label runat="server" Text="" ID="lblSeModificoCorrect" CssClass="lbl-text-border"></asp:Label>
+                <asp:Label runat="server" Text="" ID="lblSeEliminoCorrect" CssClass="lbl-text-border"></asp:Label>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-3">
+            <div class="mb-3">
+                <a href="FormPokemon.aspx" class="btn btn-primary">Agregar</a>
+            </div>
+        </div>
+    </div>
 
 </asp:Content>

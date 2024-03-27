@@ -5,17 +5,17 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <style>
         .titulo {
-            font-size: 24px; /* Tamaño de la fuente en relación con el ancho de la ventana */
+            font-size: 26px; /* Tamaño de la fuente en relación con el ancho de la ventana */
             font-weight: bold;
             text-transform: uppercase;
-            padding: 1vw 3vw; /* Espacio alrededor del texto en relación con el ancho de la ventana */
+            padding: 0.8vw 1.2vw; /* Espacio alrededor del texto en relación con el ancho de la ventana */
             border: 0.2vw solid black; /* Ancho del borde en relación con el ancho de la ventana */
             border-radius: 1vw; /* Borde redondeado en relación con el ancho de la ventana */
             display: inline-block;
         }
 
         .lbl-text {
-            font-size: 18px;
+            font-size: 21px;
             font-weight: bold;
         }
 
@@ -23,14 +23,15 @@
             font-size: 18px;
             font-weight: bold;
             text-transform: uppercase;
-            padding: 3px 6px; /* Espacio alrededor del texto en relación con el ancho de la ventana */
+            padding: 2px 4px; /* Espacio alrededor del texto en relación con el ancho de la ventana */
             border: 0.1vw solid black; /* Ancho del borde en relación con el ancho de la ventana */
             border-radius: 4px; /* Borde redondeado en relación con el ancho de la ventana */
             display: inline-block;
+            margin-top: 5px;
         }
 
         .txt-p {
-            font-size: 16px;
+            font-size: 18px;
         }
     </style>
 

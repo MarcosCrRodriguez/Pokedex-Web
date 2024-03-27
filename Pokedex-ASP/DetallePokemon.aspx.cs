@@ -19,7 +19,7 @@ namespace Pokedex_ASP
                 int id = int.Parse(Request.QueryString["id"].ToString());
 
                 Pokemon pokemon = PokemonDAO.LeerPorID(id);
-                lblDatosPokemon.Text = $"{pokemon.Nombre} - {pokemon.NumeroPokedex}";
+                lblDatosPokemon.Text = $"{pokemon.Nombre} - N.° {Validacion.VerificarNumero(pokemon.NumeroPokedex)}";
                 srcUrl.ImageUrl = pokemon.UrlImagen;
                 lblTipo.Text = "Tipo: "; 
                 lblTipoBorder.Text = pokemon.Tipo;
@@ -28,6 +28,11 @@ namespace Pokedex_ASP
                 lblDebilidad.Text = "Debilidad: ";
                 lblDebilidadBorder.Text = pokemon.Debilidad;
                 prfPokemon.Text = pokemon.Descripcion;
+            }
+            else
+            {
+                Session.Add("Error", "Necesita ingresar desde la pokedex un pokemon para que puedan cargarse sus datos");
+                Response.Redirect("Error.aspx");
             }
         }
 

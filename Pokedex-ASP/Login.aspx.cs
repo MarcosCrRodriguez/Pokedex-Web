@@ -1,5 +1,6 @@
 ﻿using ClasesDatos;
 using Dominio;
+using ExcepcionesPropias;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,9 +20,19 @@ namespace Pokedex_ASP
         protected void btnIngresar_Click(object sender, EventArgs e)
         {
             Usuario usuario = new Usuario();
-
+            
             try
             {
+                if (Validacion.ValidaTextoVacio(txtUser.Text) || Validacion.ValidaTextoVacio(txtPassword.Text))
+                {
+                    lblMensaje.Visible = true;
+                    throw new EmptyParametersException("¡Alguno de los campos esta vacio, debe ingesar datos en todos los campos!");
+                }
+                else
+                {
+                    lblMensaje.Visible = false;
+                }
+
                 usuario.User = txtUser.Text;
                 usuario.Pass = txtPassword.Text;
 
@@ -35,13 +46,19 @@ namespace Pokedex_ASP
                     lblMensaje.Visible = true;
                     lblMensaje.Text = "No se encuentra el usuario en la DB, ingrese corretamente los datos.\n" +
                         "Si no tiene cuenta, ingrese en la opcion de [Registrar]";
-                    //Session.Add("Error", "No se encuentra el usuario en la DB, si desea puede registrarse a continuación");
-                    //Response.Redirect("Error.aspx");
                 }
+            }
+            catch (EmptyParametersException ex)
+            {
+                lblMensaje.Text = ex.Message;
+            }
+            catch (DataBasesException ex)
+            {
+                lblMensaje.Text = ex.Message;
             }
             catch (Exception ex)
             {
-
+                lblMensaje.Text = "Ocurrio un error inesperado.\n" + ex.Message;
             }
         }
     }

@@ -1,4 +1,5 @@
 ﻿using Dominio;
+using ExcepcionesPropias;
 using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
@@ -38,17 +39,9 @@ namespace ClasesDatos
                 int rows = command.ExecuteNonQuery();
                 rtn = true;
             }
-            //catch (SqlException ex)
-            //{
-            //    throw new SqlExceptionDuplicateUserDB("No se pudo cargar el Pokemon con un Numero de Pokedex ya existente", ex);
-            //}
-            //catch (Exception ex)
-            //{
-            //    throw new DataBasesException("Error a la hora de trabajar con la DB", ex);
-            //}
             catch (Exception ex)
             {
-                throw new Exception("Error a la hora de trabajar con la DB", ex);
+                throw new DataBasesException("Error a la hora de trabajar con la DB", ex);
             }
             finally
             {
@@ -79,13 +72,9 @@ namespace ClasesDatos
                 }
                 return listaUsuarios;
             }
-            //catch (Exception ex)
-            //{
-            //    throw new DataBasesException("Hubo problemas con la carga de la \nlista desde la BD", ex); 
-            //}
             catch (Exception ex)
             {
-                throw ex;
+                throw new DataBasesException("Hubo problemas con la carga de la lista desde la BD", ex);
             }
             finally
             {
@@ -99,7 +88,7 @@ namespace ClasesDatos
             {
                 command.Parameters.Clear();
                 connection.Open();
-                command.CommandText = $"SELECT ID, TipoUsuario FROM USUARIOS WHERE Usuario = @Usuario AND Pass = @Pass";
+                command.CommandText = $"SELECT ID, TipoUsuario, ImagenPerfil, Nombre, Apellido, FechaNacimiento FROM USUARIOS WHERE Usuario = @Usuario AND Pass = @Pass";
                 command.Parameters.AddWithValue("@Usuario", usuario.User);
                 command.Parameters.AddWithValue("@Pass", usuario.Pass);
 
@@ -109,15 +98,31 @@ namespace ClasesDatos
                     {
                         usuario.ID = Convert.ToInt32(reader["ID"]);
                         usuario.TipoUser = reader["TipoUsuario"].ToString();
+                        if (!(reader["ImagenPerfil"] is DBNull) || reader["ImagenPerfil"].ToString() != "")
+                        {
+                            usuario.ImagenPerfil = reader["ImagenPerfil"].ToString();
+                        }
+                        if (!(reader["Nombre"] is DBNull) || reader["Nombre"].ToString() != "")
+                        {
+                            usuario.Nombre = reader["Nombre"].ToString();
+                        }
+                        if (!(reader["Apellido"] is DBNull) || reader["Apellido"].ToString() != "")
+                        {
+                            usuario.Apellido = reader["Apellido"].ToString();
+                        }
+                        if (!(reader["FechaNacimiento"] is DBNull) || reader["FechaNacimiento"].ToString() != "")
+                        {
+                            usuario.FechaNacimiento = DateTime.Parse(reader["FechaNacimiento"].ToString());
+                        }
 
                         return true;
                     }
                 }
                 return false;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw new DataBasesException("Error a la hora de trabajar con la DB");
             }
             finally
             {
@@ -148,18 +153,44 @@ namespace ClasesDatos
                 }
                 return usuario;
             }
-            //catch (exception ex)
-            //{
-            //    throw new databasesexception("error a la hora de trabajar con la db", ex);
-            //}
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw new DataBasesException("Error a la hora de trabajar con la DB");
             }
             finally
             {
                 connection.Close();
             }
+        }
+
+        public static bool ActualizarUsuario(Usuario usuario)
+        {
+            bool rtn = false;
+            try
+            {
+                command.Parameters.Clear();
+                connection.Open();
+                command.CommandText = $"UPDATE USUARIOS SET Nombre = @Nombre, Apellido = @Apellido, ImagenPerfil = @ImagenPerfil, FechaNacimiento = @FechaNacimiento " +
+                    $"WHERE ID = @ID";
+                command.Parameters.AddWithValue("@Nombre", usuario.Nombre);
+                command.Parameters.AddWithValue("@Apellido", usuario.Apellido);
+                command.Parameters.AddWithValue("@ImagenPerfil", usuario.ImagenPerfil != null ? usuario.ImagenPerfil : "");
+                command.Parameters.AddWithValue("@FechaNacimiento", usuario.FechaNacimiento);
+                command.Parameters.AddWithValue("@ID", usuario.ID);
+                if (command.ExecuteNonQuery() == 1)
+                {
+                    rtn = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error a la hora de trabajar con la DB", ex);
+            }
+            finally
+            {
+                connection.Close();
+            }
+            return rtn;
         }
     }
 }

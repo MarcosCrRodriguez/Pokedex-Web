@@ -14,7 +14,7 @@
 <%-- Tambien que pueda acceder sus los datos completos del pokemon a travez del boton o enlace --%>
 <body>
     <form id="form1" runat="server">
-        <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+        <nav class="navbar navbar-expand-lg bg-white navbar-white">
             <div class="container-fluid">
                 <a class="navbar-brand" href="#">Biblioteca Pokemon</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,9 +22,6 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link" runat="server" href="~/Home.aspx">Home</a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link active" runat="server" aria-current="page" href="~/">Pokedex</a>
                         </li>
@@ -38,9 +35,9 @@
                             <a class="nav-link" runat="server" href="~/MiPerfil.aspx">Mi Perfil</a>
                         </li>
                     </ul>
-                    <% if (!(Session["usuario"] != null))
+                    <% if (!(ClasesDatos.Seguridad.SesionActiva(Session["usuario"])))
                         { %>
-                    <div class="d-flex" role="search">
+                    <div class="d-flex align-items-center" role="search">
                         <div class="nav-item me-2">
                             <asp:Button ID="btnLogin" runat="server" CssClass="btn btn-success" Text="Login" type="submit" OnClick="btnLogin_Click" />
                         </div>
@@ -53,17 +50,25 @@
                     <% }
                         else
                         { %>
-                    <div class="d-flex" role="search">
+                    <div class="d-flex align-items-center" role="search">
                         <div class="nav-item me-2">
                             <asp:Button ID="btnCerrarSesion" runat="server" CssClass="btn btn-outline-secondary" Text="Cerrar Sesion" type="submit" OnClick="btnCerrarSesion_Click" />
                         </div>
+                        <div class="nav-item me-2">
+                            <asp:Label ID="txtUsuario" runat="server" Text="" style="color: black;"></asp:Label>
+                        </div>
                     </div>
-                    <% }%>
+                    <% } %>
+                    <div class="d-flex" role="search">
+                        <div class="nav-item me-2">
+                            <asp:Image ID="imgAvatar" runat="server" Style="height: 40px; width: 40px; border-radius: 50%; border: 0.1vw solid black;" />
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>
         <div class="row">
-            <div class="col-2 bg-secondary"></div>
+            <div class="col-2 bg-dark"></div>
             <div class="col">
                 <div class="container">
                     <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
@@ -80,7 +85,7 @@
                     </footer>
                 </div>
             </div>
-            <div class="col-2 bg-secondary"></div>
+            <div class="col-2 bg-dark"></div>
         </div>
     </form>
 </body>

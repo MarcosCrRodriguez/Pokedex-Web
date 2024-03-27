@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using ClasesDatos;
 using Dominio;
+using ExcepcionesPropias;
 
 namespace Pokedex_ASP
 {
@@ -14,13 +15,29 @@ namespace Pokedex_ASP
         private static List<Pokemon> pokemons;
         protected void Page_Load(object sender, EventArgs e)
         {
-            pokemons = PokemonDAO.LeerPokemones();
-            pokemons = OrdenarPorValor(pokemons);
+            lblInfo.Visible = true;
+            lblMensaje.Visible = false;
 
-            if (!IsPostBack)
+            try
             {
-                repRepetidor.DataSource = pokemons;
-                repRepetidor.DataBind();
+                pokemons = PokemonDAO.LeerPokemones();
+                pokemons = OrdenarPorValor(pokemons);
+
+                if (!IsPostBack)
+                {
+                    repRepetidor.DataSource = pokemons;
+                    repRepetidor.DataBind();
+                }
+            }
+            catch (DataBasesException ex)
+            {
+                Session.Add("Error", ex.Message);
+                Response.Redirect("Error.aspx");
+            }
+            catch (Exception)
+            {
+                Session.Add("Error", "NO se pudieron cargar los pokémons de la pokedex, intente nuevamente en unos minutos");
+                Response.Redirect("Error.aspx");
             }
         }
 
@@ -34,6 +51,45 @@ namespace Pokedex_ASP
         {
             string dato = ((Button)sender).CommandArgument;
             Response.Redirect("DetallePokemon.aspx?id=" + dato);
+        }
+
+        protected void btnSerch_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (Validacion.ValidaTextoVacio(txtNumeroSerch.Text))
+                {
+                    lblInfo.Visible = false;
+                    lblMensaje.Visible = true;
+                    throw new EmptyParametersException("¡Alguno de los campos esta vacio, debe ingesar datos en todos los campos!");
+                }
+                else
+                {
+                    lblInfo.Visible = true;
+                    lblMensaje.Visible = false;
+                }
+
+                Pokemon pokemon = PokemonDAO.LeerPorNumeroPokedex(Convert.ToInt32(txtNumeroSerch.Text));
+                if (pokemon != null)
+                {
+                    Response.Redirect("DetallePokemon.aspx?id=" + pokemon.ID, false);
+                }
+                else
+                {
+                    throw new Exception("Es posible que el pokemon que estas buscando no se encuentre en la Pokedex, ingresa un nuevo numero en el buscador.");
+                }
+            }
+            catch (EmptyParametersException ex)
+            {
+                lblInfo.Visible = false;
+                lblMensaje.Text = ex.Message;
+            }
+            catch (Exception ex)
+            {
+                Session.Add("Error", ex.Message);
+                Response.Redirect("Error.aspx?id=" + -1);
+            }
+
         }
     }
 }
