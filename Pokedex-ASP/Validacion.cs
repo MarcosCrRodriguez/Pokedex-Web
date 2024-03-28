@@ -43,5 +43,17 @@ namespace Pokedex_ASP
 
             return cadena;
         }
+
+        public static string ValidarCadenaNinguno(string cadena)
+        {
+            if (!(cadena == "Ninguno"))
+            {
+                return "[" + cadena + "]";
+            }
+            else
+            {
+                return "";
+            }
+        }
     }
 }

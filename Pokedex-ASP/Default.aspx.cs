@@ -12,7 +12,7 @@ namespace Pokedex_ASP
 {
     public partial class Default : System.Web.UI.Page
     {
-        private static List<Pokemon> pokemons;
+        public static List<Pokemon> pokemons;
         protected void Page_Load(object sender, EventArgs e)
         {
             lblInfo.Visible = true;
@@ -23,11 +23,11 @@ namespace Pokedex_ASP
                 pokemons = PokemonDAO.LeerPokemones();
                 pokemons = OrdenarPorValor(pokemons);
 
-                if (!IsPostBack)
-                {
-                    repRepetidor.DataSource = pokemons;
-                    repRepetidor.DataBind();
-                }
+                //if (!IsPostBack)
+                //{
+                //    repRepetidor.DataSource = pokemons;
+                //    repRepetidor.DataBind();
+                //}
             }
             catch (DataBasesException ex)
             {
@@ -47,11 +47,11 @@ namespace Pokedex_ASP
             return lista = lista.OrderBy(pokemon => pokemon.NumeroPokedex).ToList();
         }
 
-        protected void btnAcceder_Click(object sender, EventArgs e)
-        {
-            string dato = ((Button)sender).CommandArgument;
-            Response.Redirect("DetallePokemon.aspx?id=" + dato);
-        }
+        //protected void btnAcceder_Click(object sender, EventArgs e)
+        //{
+        //    string dato = ((Button)sender).CommandArgument;
+        //    Response.Redirect("DetallePokemon.aspx?id=" + dato);
+        //}
 
         protected void btnSerch_Click(object sender, EventArgs e)
         {
@@ -90,6 +90,38 @@ namespace Pokedex_ASP
                 Response.Redirect("Error.aspx?id=" + -1);
             }
 
+        }
+
+        public string ValidarCadenaNinguno(string cadena)
+        {
+            if (!(cadena == "Ninguno"))
+            {
+                return "[" + cadena + "]";
+            }
+            else
+            {
+                return "";
+            }
+        }
+
+        public string VerificarNumero(int numero)
+        {
+            string cadena = $"{numero}";
+
+            if (numero < 10)
+            {
+                cadena = $"000{numero}";
+            }
+            else if (numero < 100)
+            {
+                cadena = $"00{numero}";
+            }
+            else if (numero < 1000)
+            {
+                cadena = $"0{numero}";
+            }
+
+            return cadena;
         }
     }
 }

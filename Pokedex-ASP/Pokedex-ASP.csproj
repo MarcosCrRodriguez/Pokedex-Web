@@ -182,6 +182,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="FotosUtilizadas\" />
     <Folder Include="Images\" />
   </ItemGroup>
   <PropertyGroup>

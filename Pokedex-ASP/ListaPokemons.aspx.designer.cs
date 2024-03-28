@@ -15,6 +15,15 @@ namespace Pokedex_ASP
     {
 
         /// <summary>
+        /// imgAmbientacion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image imgAmbientacion;
+
+        /// <summary>
         /// lblFiltrar control.
         /// </summary>
         /// <remarks>
@@ -49,6 +58,15 @@ namespace Pokedex_ASP
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList ddlTipo;
+
+        /// <summary>
+        /// ddlSubTipo control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList ddlSubTipo;
 
         /// <summary>
         /// ddlDebilidad control.

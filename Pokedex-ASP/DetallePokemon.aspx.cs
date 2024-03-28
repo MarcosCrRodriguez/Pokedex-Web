@@ -7,6 +7,7 @@ using System.Web.UI.WebControls;
 using Dominio;
 using ClasesDatos;
 using System.Web.Configuration;
+using System.Drawing;
 
 namespace Pokedex_ASP
 {
@@ -22,7 +23,12 @@ namespace Pokedex_ASP
                 lblDatosPokemon.Text = $"{pokemon.Nombre} - N.° {Validacion.VerificarNumero(pokemon.NumeroPokedex)}";
                 srcUrl.ImageUrl = pokemon.UrlImagen;
                 lblTipo.Text = "Tipo: "; 
-                lblTipoBorder.Text = pokemon.Tipo;
+                lblTipoBorder.Text = pokemon.Tipo; //Usuario usuario = user != null ? (Usuario)user : null;
+                lblSubTipoBorder.Text = pokemon.SubTipo != "Ninguno" ? pokemon.SubTipo : ""; 
+                if (lblSubTipoBorder.Text == "")
+                {
+                    lblSubTipoBorder.Visible = false;
+                }
                 lblResistencia.Text = "Resistencia: ";
                 lblResistenciaBorder.Text = pokemon.Resistencia;
                 lblDebilidad.Text = "Debilidad: ";
@@ -32,7 +38,7 @@ namespace Pokedex_ASP
             else
             {
                 Session.Add("Error", "Necesita ingresar desde la pokedex un pokemon para que puedan cargarse sus datos");
-                Response.Redirect("Error.aspx");
+                Response.Redirect("Error.aspx?id=" + -1);
             }
         }
 

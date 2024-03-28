@@ -15,6 +15,7 @@ namespace Pokedex_ASP
         protected void Page_Load(object sender, EventArgs e)
         {
             lblMensaje.Visible = false;
+            imgLogin.ImageUrl = "./FotosUtilizadas/cara-pickachu.jpg";
         }
 
         protected void btnIngresar_Click(object sender, EventArgs e)

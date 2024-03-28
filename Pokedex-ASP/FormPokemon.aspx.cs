@@ -26,7 +26,8 @@ namespace Pokedex_ASP
 
                 foreach (var tipo in tipoElementos)
                 {
-                    ddlTipo.Items.Add(tipo);
+                    ddlTipo.Items.Add(tipo); 
+                    ddlSubTipo.Items.Add(tipo);
                     ddlResistencia.Items.Add(tipo);
                     ddlDebilidad.Items.Add(tipo);
                 }
@@ -42,6 +43,7 @@ namespace Pokedex_ASP
                     txtDescripcion.Text = pokemon.Descripcion;
                     txtUrlImagen.Text = pokemon.UrlImagen;
                     ddlTipo.SelectedValue = pokemon.Tipo;
+                    ddlSubTipo.SelectedValue = pokemon.SubTipo;
                     ddlResistencia.SelectedValue = pokemon.Resistencia;
                     ddlDebilidad.SelectedValue = pokemon.Debilidad;
 
@@ -89,7 +91,7 @@ namespace Pokedex_ASP
             try
             {
                 if (Validacion.ValidaTextoVacio(txtNumeroPokedex.Text) || Validacion.ValidaTextoVacio(txtNombre.Text) || Validacion.ValidaTextoVacio(txtDescripcion.Text) ||
-                    Validacion.ValidaTextoVacio(txtUrlImagen.Text) || ddlTipo.Items.Count == 0 || ddlResistencia.Items.Count == 0 || ddlDebilidad.Items.Count == 0) 
+                    Validacion.ValidaTextoVacio(txtUrlImagen.Text) || Validacion.ValidaTextoVacio(ddlTipo.Text) || Validacion.ValidaTextoVacio(ddlSubTipo.Text) || Validacion.ValidaTextoVacio(ddlResistencia.Text) || Validacion.ValidaTextoVacio(ddlDebilidad.Text)) 
                 {
                     lblMensaje.Visible = true;
                     throw new EmptyParametersException("¡Alguno de los campos esta vacio, debe ingesar datos en todos los campos!");
@@ -98,8 +100,7 @@ namespace Pokedex_ASP
                 {
                     lblMensaje.Visible = false;
                 }
-
-                Pokemon pokemon = new Pokemon(Convert.ToInt32(txtNumeroPokedex.Text), txtNombre.Text, txtDescripcion.Text, txtUrlImagen.Text, ddlTipo.SelectedValue, ddlResistencia.SelectedValue, ddlDebilidad.SelectedValue, 0); 
+                Pokemon pokemon = new Pokemon(Convert.ToInt32(txtNumeroPokedex.Text), txtNombre.Text, txtDescripcion.Text, txtUrlImagen.Text, ddlTipo.SelectedValue, ddlSubTipo.SelectedValue, ddlResistencia.SelectedValue, ddlDebilidad.SelectedValue, 0); 
                 if (!(Pokemon.VerificarExistePokemon(PokemonDAO.LeerPokemones(), pokemon.NumeroPokedex)))
                 {
                     if (PokemonDAO.AgregarPokemon(pokemon))
@@ -144,7 +145,7 @@ namespace Pokedex_ASP
             try
             {
                 if (Validacion.ValidaTextoVacio(txtNumeroPokedex.Text) || Validacion.ValidaTextoVacio(txtNombre.Text) || Validacion.ValidaTextoVacio(txtDescripcion.Text) ||
-                    Validacion.ValidaTextoVacio(txtUrlImagen.Text) || ddlTipo.Items.Count == 0 || ddlResistencia.Items.Count == 0 || ddlDebilidad.Items.Count == 0)
+                    Validacion.ValidaTextoVacio(txtUrlImagen.Text) || Validacion.ValidaTextoVacio(ddlTipo.Text) || Validacion.ValidaTextoVacio(ddlSubTipo.Text) || Validacion.ValidaTextoVacio(ddlResistencia.Text) || Validacion.ValidaTextoVacio(ddlDebilidad.Text))
                 {
                     lblMensaje.Visible = true;
                     throw new EmptyParametersException("¡Alguno de los campos esta vacio, debe ingesar datos en todos los campos!");
@@ -154,7 +155,7 @@ namespace Pokedex_ASP
                     lblMensaje.Visible = false;
                 }
 
-                Pokemon pokemon = new Pokemon(Convert.ToInt32(txtNumeroPokedex.Text), txtNombre.Text, txtDescripcion.Text, txtUrlImagen.Text, ddlTipo.SelectedValue, ddlResistencia.SelectedValue, ddlDebilidad.SelectedValue, idPokemon);
+                Pokemon pokemon = new Pokemon(Convert.ToInt32(txtNumeroPokedex.Text), txtNombre.Text, txtDescripcion.Text, txtUrlImagen.Text, ddlTipo.SelectedValue, ddlSubTipo.SelectedValue, ddlResistencia.SelectedValue, ddlDebilidad.SelectedValue, idPokemon);
                 if (PokemonDAO.ModificarPokemon(pokemon))
                 {
                     Session.Add("Complete", "Se modifico correctamente al pokemon");
@@ -187,6 +188,7 @@ namespace Pokedex_ASP
             txtDescripcion.Text = "";
             txtUrlImagen.Text = "";
             ddlTipo.SelectedValue = "";
+            ddlSubTipo.SelectedValue = "";
             ddlResistencia.SelectedValue = "";
             ddlDebilidad.SelectedValue = "";
 
@@ -195,6 +197,7 @@ namespace Pokedex_ASP
             txtDescripcion.Enabled = false;
             txtUrlImagen.Enabled = false;
             ddlTipo.Enabled = false;
+            ddlSubTipo.Enabled = false;
             ddlResistencia.Enabled = false;
             ddlDebilidad.Enabled = false;
 

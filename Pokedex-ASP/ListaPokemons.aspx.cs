@@ -31,6 +31,7 @@ namespace Pokedex_ASP
                     Response.Redirect("Error.aspx", false);
                 }
 
+                imgAmbientacion.ImageUrl = "./FotosUtilizadas/title.jpg";
                 FiltroAvanzado = chkAvanzado.Checked;
 
                 pokemons = PokemonDAO.LeerPokemones();
@@ -137,7 +138,7 @@ namespace Pokedex_ASP
         {
             try
             {
-                List<Pokemon> listaFiltrada = PokemonDAO.LeerPokemonesFiltro(ddlTipo.SelectedItem.ToString(), ddlDebilidad.SelectedItem.ToString());
+                List<Pokemon> listaFiltrada = PokemonDAO.LeerPokemonesFiltro(ddlTipo.SelectedItem.ToString(), ddlSubTipo.SelectedItem.ToString(), ddlDebilidad.SelectedItem.ToString());
                 ListaPokemons.OrdenarPorValor(listaFiltrada);
                 dgvPokemons.DataSource = listaFiltrada;
                 dgvPokemons.DataBind();
@@ -170,6 +171,11 @@ namespace Pokedex_ASP
         }
 
         protected void ddlTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        protected void ddlSubTipo_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

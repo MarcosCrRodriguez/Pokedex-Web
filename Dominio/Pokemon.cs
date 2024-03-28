@@ -14,17 +14,19 @@ namespace Dominio
         private string descripcion;
         private string urlImagen;
         private string tipo;
+        private string subTtipo;
         private string resistencia;
         private string debilidad;
         private int id;
 
-        public Pokemon (int numeroPokedex, string nombre, string descripcion, string urlImagen, string tipo, string resistencia, string debilidad, int id)
+        public Pokemon(int numeroPokedex, string nombre, string descripcion, string urlImagen, string tipo, string subTtipo, string resistencia, string debilidad, int id)
         {
             this.numeroPokedex = numeroPokedex;
             this.nombre = nombre;
             this.descripcion = descripcion;
             this.urlImagen = urlImagen;
             this.tipo = tipo;
+            this.subTtipo = subTtipo;
             this.resistencia = resistencia;
             this.debilidad = debilidad;
             this.id = id;
@@ -55,6 +57,11 @@ namespace Dominio
         {
             get { return this.tipo; }
             set { this.tipo = value; }
+        }
+        public string SubTipo
+        {
+            get { return this.subTtipo; }
+            set { this.subTtipo = value; }
         }
         public string Resistencia {
             get { return this.resistencia; }

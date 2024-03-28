@@ -15,6 +15,7 @@ namespace Pokedex_ASP
         protected void Page_Load(object sender, EventArgs e)
         {
             lblMensaje.Visible = false;
+            imgRegistro.ImageUrl = "./FotosUtilizadas/geng-gar.jpg";
         }
 
         protected void btnRegistrar_Click(object sender, EventArgs e)

@@ -80,6 +80,12 @@ namespace Pokedex_ASP
         {
             try
             {
+                Page.Validate();
+                if (!Page.IsValid)
+                {
+                    return;
+                }
+
                 if (Validacion.ValidaTextoVacio(txtNombre.Text) || Validacion.ValidaTextoVacio(txtApellido.Text) || Validacion.ValidaTextoVacio(txtFechaNacimiento.Text))
                 {
                     lblMensaje.Visible = true;

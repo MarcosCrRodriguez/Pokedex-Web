@@ -32,13 +32,14 @@ namespace ClasesDatos
             {
                 command.Parameters.Clear();
                 connection.Open();
-                command.CommandText = $"Insert INTO POKEMONS (NumeroPokedex, Nombre, Descripcion, UrlImagen, Tipo, Resistencia, Debilidad) " +
-                    $"VALUES (@NumeroPokedex, @Nombre, @Descripcion, @UrlImagen, @Tipo, @Resistencia, @Debilidad)";
+                command.CommandText = $"Insert INTO POKEMONS (NumeroPokedex, Nombre, Descripcion, UrlImagen, Tipo, SubTipo, Resistencia, Debilidad) " +
+                    $"VALUES (@NumeroPokedex, @Nombre, @Descripcion, @UrlImagen,  @Tipo, @SubTipo, @Resistencia, @Debilidad)";
                 command.Parameters.AddWithValue("@NumeroPokedex", pokemon.NumeroPokedex);
                 command.Parameters.AddWithValue("@Nombre", pokemon.Nombre);
                 command.Parameters.AddWithValue("@Descripcion", pokemon.Descripcion);
                 command.Parameters.AddWithValue("@UrlImagen", pokemon.UrlImagen);
                 command.Parameters.AddWithValue("@Tipo", pokemon.Tipo);
+                command.Parameters.AddWithValue("@SubTipo", pokemon.SubTipo);
                 command.Parameters.AddWithValue("@Resistencia", pokemon.Resistencia);
                 command.Parameters.AddWithValue("@Debilidad", pokemon.Debilidad);
                 int rows = command.ExecuteNonQuery();
@@ -78,6 +79,7 @@ namespace ClasesDatos
                             reader["Descripcion"].ToString(),
                             reader["UrlImagen"].ToString(),
                             reader["Tipo"].ToString(),
+                            reader["SubTipo"].ToString(),
                             reader["Resistencia"].ToString(),
                             reader["Debilidad"].ToString(),
                             Convert.ToInt32(reader["ID"])
@@ -115,6 +117,7 @@ namespace ClasesDatos
                             reader["Descripcion"].ToString(),
                             reader["UrlImagen"].ToString(),
                             reader["Tipo"].ToString(),
+                            reader["SubTipo"].ToString(),
                             reader["Resistencia"].ToString(),
                             reader["Debilidad"].ToString(),
                             Convert.ToInt32(reader["ID"])
@@ -133,15 +136,16 @@ namespace ClasesDatos
             }
         }
 
-        public static List<Pokemon> LeerPokemonesFiltro(string tipo, string debilidad)
+        public static List<Pokemon> LeerPokemonesFiltro(string tipo, string subTipo, string debilidad)
         {
             List<Pokemon> listaPokemones = new List<Pokemon>();
             try
             {
                 command.Parameters.Clear();
                 connection.Open();
-                command.CommandText = $"SELECT NumeroPokedex, Nombre, Descripcion, UrlImagen, Tipo, Resistencia, Debilidad, ID FROM POKEMONS WHERE Tipo = @Tipo AND Debilidad = @Debilidad";
+                command.CommandText = $"SELECT NumeroPokedex, Nombre, Descripcion, UrlImagen, Tipo, Resistencia, Debilidad, ID FROM POKEMONS WHERE Tipo = @Tipo AND SubTipo = @SubTipo AND Debilidad = @Debilidad";
                 command.Parameters.AddWithValue("@Tipo", tipo);
+                command.Parameters.AddWithValue("@SubTipo", subTipo);
                 command.Parameters.AddWithValue("@Debilidad", debilidad);
 
                 using (SqlDataReader reader = command.ExecuteReader())
@@ -152,7 +156,8 @@ namespace ClasesDatos
                             reader["Nombre"].ToString(),
                             reader["Descripcion"].ToString(),
                             reader["UrlImagen"].ToString(),
-                            reader["Tipo"].ToString(),
+                            reader["Tipo"].ToString(), 
+                            reader["SubTipo"].ToString(),
                             reader["Resistencia"].ToString(),
                             reader["Debilidad"].ToString(),
                             Convert.ToInt32(reader["ID"]))
@@ -188,7 +193,8 @@ namespace ClasesDatos
                             reader["Nombre"].ToString(),
                             reader["Descripcion"].ToString(),
                             reader["UrlImagen"].ToString(),
-                            reader["Tipo"].ToString(),
+                            reader["Tipo"].ToString(), 
+                            reader["SubTipo"].ToString(),
                             reader["Resistencia"].ToString(),
                             reader["Debilidad"].ToString(),
                             Convert.ToInt32(reader["ID"]))
@@ -214,13 +220,14 @@ namespace ClasesDatos
             {
                 command.Parameters.Clear();
                 connection.Open();
-                command.CommandText = $"UPDATE POKEMONS SET NumeroPokedex = @NumeroPokedex, Nombre = @Nombre, Descripcion = @Descripcion, UrlImagen = @UrlImagen, Tipo = @Tipo, Resistencia = @Resistencia, Debilidad = @Debilidad " +
+                command.CommandText = $"UPDATE POKEMONS SET NumeroPokedex = @NumeroPokedex, Nombre = @Nombre, Descripcion = @Descripcion, UrlImagen = @UrlImagen, Tipo = @Tipo, SubTipo = @SubTipo, Resistencia = @Resistencia, Debilidad = @Debilidad " +
                     $"WHERE ID = @ID";
                 command.Parameters.AddWithValue("@NumeroPokedex", pokemon.NumeroPokedex);
                 command.Parameters.AddWithValue("@Nombre", pokemon.Nombre);
                 command.Parameters.AddWithValue("@Descripcion", pokemon.Descripcion);
                 command.Parameters.AddWithValue("@UrlImagen", pokemon.UrlImagen);
                 command.Parameters.AddWithValue("@Tipo", pokemon.Tipo);
+                command.Parameters.AddWithValue("@SubTipo", pokemon.SubTipo);
                 command.Parameters.AddWithValue("@Resistencia", pokemon.Resistencia);
                 command.Parameters.AddWithValue("@Debilidad", pokemon.Debilidad);
                 command.Parameters.AddWithValue("@ID", pokemon.ID);

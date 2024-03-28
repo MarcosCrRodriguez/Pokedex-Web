@@ -23,6 +23,15 @@
             border-radius: 3px; /* Borde redondeado en relación con el ancho de la ventana */
             display: inline-block;
         }
+
+        .imagen-con-borde {
+            max-width: 100%; /* La imagen se ajustará al ancho máximo del contenedor */
+            height: auto; /* La altura se ajustará automáticamente para mantener la proporción */
+            border: 2px solid #ccc; /* Añade un borde de 2px sólido de color gris claro */
+            border-radius: 10px; /* Añade un borde redondeado */
+            display: block; /* Asegura que la imagen sea un elemento de bloque */
+            margin: 0 auto; /* Centra horizontalmente la imagen */
+        }
     </style>
 
     <hr />
@@ -35,7 +44,13 @@
                 una sola letra se filtrara por los Pokémons
                 que contengan misma esa letra en su nombre."></asp:Label>
         </div>
-        <div class="col"></div>
+        <div class="col-2"></div>
+        <div class="col-3">
+            <div class="mb-3">
+                <asp:Image runat="server" ImageUrl="https://grupoact.com.ar/wp-content/uploads/2020/04/placeholder-1024x683.png"
+                    ID="imgAmbientacion" CssClass="img-fluid mb-3 imagen-con-borde"></asp:Image>
+            </div>
+        </div>
     </div>
     <br />
     <div class="row bg-dark" style="padding-top: 10px; padding-left: 20px; margin-left: -30px; margin-right: -30px;">
@@ -84,6 +99,33 @@
         </div>
         <div class="col-3">
             <div class="mb-3">
+                <asp:Label runat="server" Text="Sub Tipo" Style="color: white;"></asp:Label>
+                <asp:DropDownList runat="server" ID="ddlSubTipo" CssClass="form-control"
+                    OnSelectedIndexChanged="ddlSubTipo_SelectedIndexChanged" AutoPostBack="true">
+                    <asp:ListItem Text="Fuego" />
+                    <asp:ListItem Text="Planta" />
+                    <asp:ListItem Text="Agua" />
+                    <asp:ListItem Text="Eléctrico" />
+                    <asp:ListItem Text="Roca" />
+                    <asp:ListItem Text="Lucha" />
+                    <asp:ListItem Text="Tierra" />
+                    <asp:ListItem Text="Acero" />
+                    <asp:ListItem Text="Hielo" />
+                    <asp:ListItem Text="Psiquico" />
+                    <asp:ListItem Text="Siniestro" />
+                    <asp:ListItem Text="Fantasma" />
+                    <asp:ListItem Text="Bicho" />
+                    <asp:ListItem Text="Veneno" />
+                    <asp:ListItem Text="Hada" />
+                    <asp:ListItem Text="Dragón" />
+                    <asp:ListItem Text="Volador" />
+                    <asp:ListItem Text="Normal" />
+                    <asp:ListItem Text="Ninguno" />
+                </asp:DropDownList>
+            </div>
+        </div>
+        <div class="col-3">
+            <div class="mb-3">
                 <asp:Label runat="server" Text="Debilidad" Style="color: white;"></asp:Label>
                 <asp:DropDownList runat="server" ID="ddlDebilidad" CssClass="form-control"
                     OnSelectedIndexChanged="ddlDebilidad_SelectedIndexChanged" AutoPostBack="true">
@@ -105,6 +147,7 @@
                     <asp:ListItem Text="Dragón" />
                     <asp:ListItem Text="Volador" />
                     <asp:ListItem Text="Normal" />
+                    <asp:ListItem Text="Ninguno" />
                 </asp:DropDownList>
             </div>
         </div>
@@ -134,12 +177,12 @@
             <asp:BoundField HeaderText="Número Pokedex" DataField="NumeroPokedex" />
             <asp:BoundField HeaderText="Nombre" DataField="Nombre" />
             <asp:BoundField HeaderText="Tipo" DataField="Tipo" />
+            <asp:BoundField HeaderText="Sub Tipo" DataField="SubTipo" />
             <asp:BoundField HeaderText="Resistencia" DataField="Resistencia" />
             <asp:BoundField HeaderText="Debilidad" DataField="Debilidad" />
             <asp:CommandField ShowSelectButton="true" HeaderText="Edición" SelectText="🖊️" />
         </Columns>
     </asp:GridView>
-    <%-- Aca solo debería de poder agregar pokemons --%>
     <div class="row">
         <div class="col-3">
             <div class="mb-3">

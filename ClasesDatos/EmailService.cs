@@ -33,6 +33,17 @@ namespace ClasesDatos
             //email.Body = cuerpo;
         }
 
+        public void ComentarioUsuario(string emailUsuario, string asunto, string cuerpo)
+        {
+            email = new MailMessage();
+            email.From = new MailAddress("comentarioenviado@exito.com");
+            email.To.Add("receptor2349@gmail.com");
+            email.Subject = asunto;
+            email.IsBodyHtml = true;
+            email.Body = $"<h1>Comentario enviado de {emailUsuario}</h1> <br> <p>{cuerpo}</p>";
+            //email.Body = cuerpo;
+        }
+
         public void EnviarEmail()
         {
             try

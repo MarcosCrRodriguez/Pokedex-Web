@@ -33,6 +33,10 @@
                 <asp:DropDownList ID="ddlTipo" CssClass="form-select" runat="server"></asp:DropDownList>
             </div>
             <div class="mb-3">
+                <label for="ddlColor" class="form-labelt">Sub Tipo</label>
+                <asp:DropDownList ID="ddlSubTipo" CssClass="form-select" runat="server"></asp:DropDownList>
+            </div>
+            <div class="mb-3">
                 <label for="ddlColor" class="form-labelt">Resistencia</label>
                 <asp:DropDownList ID="ddlResistencia" CssClass="form-select" runat="server"></asp:DropDownList>
             </div>

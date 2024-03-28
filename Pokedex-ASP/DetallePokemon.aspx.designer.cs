@@ -51,6 +51,15 @@ namespace Pokedex_ASP
         protected global::System.Web.UI.WebControls.Label lblTipoBorder;
 
         /// <summary>
+        /// lblSubTipoBorder control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSubTipoBorder;
+
+        /// <summary>
         /// lblResistencia control.
         /// </summary>
         /// <remarks>

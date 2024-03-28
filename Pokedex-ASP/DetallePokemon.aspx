@@ -59,7 +59,8 @@
             <br />
             <asp:Label ID="lblTipo" runat="server" Text="" CssClass="lbl-text"></asp:Label>
             <br />
-            <asp:Label ID="lblTipoBorder" runat="server" Text="" CssClass="lbl-text-border"></asp:Label><br />
+            <asp:Label ID="lblTipoBorder" runat="server" Text="" CssClass="lbl-text-border"></asp:Label>
+            <asp:Label ID="lblSubTipoBorder" runat="server" Text="" CssClass="lbl-text-border"></asp:Label><br />
             <br />
             <asp:Label ID="lblResistencia" runat="server" Text="" CssClass="lbl-text"></asp:Label>
             <br />
